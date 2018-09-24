@@ -115,11 +115,6 @@ h6 {
   color: rgb(100, 100, 100)
 }
 
-a {
-  color: black;
-  text-decoration: none;
-}
-
 p {
   font-size: 1rem;
   color: rgb(100, 100, 100);
@@ -128,6 +123,32 @@ p {
 .headline {
   text-align: center;
   padding: 32px 0
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.92rem;
+  }
 }
 
 /* header section */
@@ -142,11 +163,15 @@ header .container {
 .logo {
   display: flex;
   align-items: center;
+  margin-left: 24px;
 }
 
 .logo img {
   height: 2.25rem;
-  margin-left: 24px;
+}
+
+.logo a {
+  text-decoration: none;
 }
 
 .logo span {
@@ -166,11 +191,45 @@ nav {
 }
 
 nav a {
-  padding-left: 16px;
+  padding: 0 8px;
+  color: black;
+  text-decoration: none;
 }
 
-.mobile {
+.desktop-lion {
   display: none;
+}
+
+@media only screen and (max-width: 755px) {
+  header .desktop {
+    display: none;
+  }
+
+  header .mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .logo span {
+    display: none;
+  }
+
+  .mobile-lion {
+    display: block;
+  }
+
+  nav {
+    position: relative;
+    right: 12px;
+  }
+
+  header .mobile {
+    padding: 0;
+  }
 }
 
 /* banner section */
@@ -205,6 +264,98 @@ nav a {
   padding: 12px 0;
   margin-top: 1rem;
   text-align: center;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .banner-content {
+    margin-top: 6.5rem;
+  }
+
+  .banner-content h3 {
+    margin-top: 1.8rem;
+    margin-bottom: 2.2rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .banner {
+    background-image: url("https://image.freepik.com/free-photo/top-view-of-people-studying-with-copybook-book-and-laptop-cups-of-coffee-on-the-table_2221-379.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 25rem;
+  }
+
+  .banner .left-side {
+    display: none;
+  }
+
+  .banner .right-side {
+    width: 100%;
+  }
+
+  .banner-content {
+    width: 45%;
+    margin-top: 5rem;
+    margin-left: 2rem;
+    padding: 1rem;
+    background-color: rgba(250, 250, 250, 0.8);
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .banner {
+    background-image: none;
+    height: auto;
+  }
+
+  .banner .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .banner .left-side {
+    display: flex;
+    width: 100%;
+    padding: 0;
+  }
+
+.banner .left-side img {
+  display: block;
+  height: 100%;
+}
+
+  .banner .right-side {
+    width: 100%;
+  }
+
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background: none;
+    margin: 1rem 0;
+    padding: 32px 16px;
+    overflow: hidden;
+  }
+
+  .banner-content h3 {
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+
+  .banner-content a {
+    font-size: 18px;
+  }
 }
 
 /* stories section */
@@ -231,12 +382,19 @@ nav a {
   margin: 32px 0 32px 0;
 }
 
+@media only screen and (max-width: 480px) {
+  .stories .left-side {
+    display: none;
+    width: 100%;
+  }
+}
+
 /* stories right side */
 
 .stories .right-side {
   display: flex;
   flex-direction: column;
-  padding-top: 16px;
+  padding: 16px 16px 0 0;
 }
 
 .story {
@@ -266,6 +424,7 @@ nav a {
   color: rgb(79, 147, 249);
   font-weight: 500;
   padding-top: 10px;
+  text-decoration: none;
 }
 
 .first.story {
@@ -285,7 +444,86 @@ nav a {
   border-top: 1px solid rgb(220, 220, 220);
 }
 
-/* learning section */
+@media only screen and (max-width: 850px) {
+  .stories .desktop {
+    display: none;
+  }
+
+  .stories .mobile {
+    display: block;
+  }
+
+  .stories .container {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .stories .left-side {
+    width: 100%;
+    padding: 16px;
+    border-right: initial;
+  }
+
+  .stories .left-side h2 {
+    text-align: center;
+  }
+
+  .left-side img {
+    display: none;
+  }
+
+  .stories .right-side {
+    width: 100%;
+  }
+
+  .story-content {
+    margin: 0 auto;
+  }
+
+  .story-content .mobile {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .story {
+    flex-wrap: wrap;
+  }
+
+  .right-side .story img {
+    width: 87%;
+  }
+
+  .stories .story-content {
+    margin: 0;
+    padding: 0 0 16px 16px;
+  }
+
+  .stories .story-content h3 {
+    font-size: 18px;
+  }
+
+  .stories .story-content p {
+    font-size: 15px;
+  }
+
+  .first.story {
+    border-bottom: none;
+  }
+
+  .second.story {
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .third.story {
+    margin: 0 0 32px 0;
+    border-top: none;
+    border-bottom: 1px solid rgba(220, 220, 220, 0.8);
+  }
+}
+
+/* courses section */
 
 .learning {
   background-color: rgb(220, 220, 220);
@@ -329,6 +567,47 @@ nav a {
   line-height: 1.2;
 }
 
+.course-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 755px) {
+  .learning .courses {
+    width: 94%;
+  }
+  .course {
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .learning {
+    background-color: white;
+  }
+
+  .learning .container .courses {
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(220, 220, 220, 0.8);
+  }
+
+  .course {
+    display: none;
+  }
+
+  .course-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .course-mobile h3{
+    width: 100%;
+    background-color: rgb(220, 220, 220);
+    padding: 16px;
+    margin: 4px;
+  }
+}
+
 /* thesis section */
 
 .thesis .container {
@@ -353,6 +632,16 @@ video {
   padding: 24px 0 8px 0;
 }
 
+@media only screen and (max-width: 480px) {
+  .thesis .left-side {
+    width: 100%;
+  }
+
+  .thesis-content {
+    display: none;
+  }
+}
+
 /* thesis right side */
 
 .box {
@@ -374,6 +663,12 @@ video {
   padding-top: 8px;
 }
 
+@media only screen and (max-width: 480px) {
+  .thesis .right-side {
+    display: none;
+  }
+}
+
 /* footer */
 
 footer {
@@ -390,4 +685,12 @@ footer nav {
   text-align: right;
   flex-grow: 1;
   font-size: 0.8rem;
+  color: black;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 480px) {
+  footer {
+    padding: 16px 0;
+  }
 }
