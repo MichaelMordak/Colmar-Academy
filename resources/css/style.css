@@ -164,10 +164,19 @@ header .container {
   display: flex;
   align-items: center;
   margin-left: 24px;
+  border-radius: 4px;
+  justify-content: center;
+  padding: 0 8px;
+  transition: background-color 250ms linear 100ms;
+}
+
+.logo:hover {
+  background-color: rgba(35, 79, 150, 0.4);
 }
 
 .logo img {
   height: 2.25rem;
+  padding-top: 6px;
 }
 
 .logo a {
@@ -194,10 +203,12 @@ nav a {
   padding: 0 8px;
   color: black;
   text-decoration: none;
+  transition: color 150ms linear, text-decoration 1s linear;
 }
 
-.desktop-lion {
-  display: none;
+nav a:hover {
+  color: rgb(35, 79, 150);
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 755px) {
@@ -211,10 +222,28 @@ nav a {
     align-items: center;
     padding: 0 6%;
   }
+
+  header .mobile a {
+    padding-top: 5px;
+    border-radius: 25px;
+    transition: background-color 150ms ease-out;
+  }
+
+  header .mobile a:hover {
+    background-color: rgba(35, 79, 150, 0.8);
+  }
+
+  .mobile-lion {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 480px) {
   .logo span {
+    display: none;
+  }
+
+  .desktop-lion {
     display: none;
   }
 
@@ -234,6 +263,8 @@ nav a {
 
 /* banner section */
 
+/* banner left-side */
+
 .banner {
   background-color: rgb(220, 220, 220);
 }
@@ -245,6 +276,8 @@ nav a {
 .left-side img {
   width: 100%;
 }
+
+/* banner right-side */
 
 .banner-content {
   display: flex;
@@ -265,6 +298,13 @@ nav a {
   margin-top: 1rem;
   text-align: center;
   text-decoration: none;
+  transition: color 220ms linear, background-color 200ms ease-out, font-weight 200ms linear;
+}
+
+.banner-content a:hover {
+  background-color: rgba(55, 55, 55, 0.4);
+  color: rgb(35, 79, 150);
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -401,6 +441,12 @@ nav a {
   display: flex;
   align-items: center;
   width: 100%;
+  transition: background-color 250ms ease-out;
+}
+
+.story:hover {
+  background-color: rgb(220, 220, 220);
+  cursor: pointer;
 }
 
 .story img {
@@ -425,6 +471,12 @@ nav a {
   font-weight: 500;
   padding-top: 10px;
   text-decoration: none;
+  transition: margin-top 100ms linear, padding-left 150ms ease-in 100ms;
+}
+
+.story:hover a {
+  margin-top: 5px;
+  padding-left: 15px;
 }
 
 .first.story {
@@ -547,6 +599,10 @@ nav a {
   background-color: white;
 }
 
+.course:hover {
+  cursor: pointer;
+}
+
 .course img {
   width: 100%;
 }
@@ -555,6 +611,15 @@ nav a {
   display: flex;
   flex-direction: column;
   padding: 16px 16px 24px 16px;
+}
+
+.course h3 {
+  transition: color 220ms linear, padding-left 200ms ease-out;
+}
+
+.course:hover h3 {
+  color: rgba(35, 79, 150, 0.5);
+  padding-left: 20px;
 }
 
 .course-content span {
@@ -605,6 +670,13 @@ nav a {
     background-color: rgb(220, 220, 220);
     padding: 16px;
     margin: 4px;
+    transition: font-size 150ms linear, box-shadow 150ms linear;
+  }
+
+  .course-mobile h3:hover {
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgb(80, 37, 155);
   }
 }
 
@@ -647,6 +719,12 @@ video {
 .box {
   display: flex;
   align-items: center;
+  transition: background-color 250ms ease-out;
+}
+
+.box:hover {
+  background-color: white;
+  cursor: pointer;
 }
 
 .first-thesis.box {
